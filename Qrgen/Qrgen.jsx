@@ -19,26 +19,30 @@ function Qrgen() {
   };
 
   return (
-    <div className="App">
+    <div className="qr-container">
       <h1>QR Code Generator</h1>
-      
-      <input
-        type="text"
-        placeholder="Enter text"
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button onClick={generateQRCode}>Generate</button>
+
+      <div className="input-section">
+        <input
+          type="text"
+          placeholder="Enter text or URL"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button onClick={generateQRCode}>Generate</button>
+      </div>
 
       <div className="controls">
         <label>
-          Background Color:
+          Background Color
           <input
             type="color"
+            value={`#${bgColor}`}
             onChange={(e) => setBgColor(e.target.value.slice(1))}
           />
         </label>
         <label>
-          Size:
+          Size: {size}px
           <input
             type="range"
             min="200"
@@ -50,7 +54,7 @@ function Qrgen() {
       </div>
 
       {qrUrl && (
-        <div className="output">
+        <div className="output-section">
           <img src={qrUrl} alt="QR Code" />
           <a href={qrUrl} download="qrcode">
             <button>Download</button>
