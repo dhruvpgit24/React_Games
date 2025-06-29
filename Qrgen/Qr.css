@@ -1,46 +1,140 @@
-@import url('http://fonts.cdnfonts.com/css/lilly');
-.App{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+  font-family: 'Poppins', sans-serif;
+}
+
+.qr-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 50px;
-  padding-top: 30px;
+  gap: 30px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
 }
-h1{
-  font-family: 'Lilly', sans-serif;
-  font-size: 50px;
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #2e7d32;
 }
-.gen input{
-  height: 35px;
-  width: 250px;
-  font-size: 20px;
-  padding-left: 5px;
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
 }
-button{
-  position: relative;
-  height: 38px;
-  width: 100px;
-  top: -2px;
-  font-size: 18px;
+
+.input-section input {
+  padding: 12px 15px;
+  width: 100%;
+  max-width: 400px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  transition: border 0.3s;
+}
+
+.input-section input:focus {
+  border-color: #2e7d32;
+  outline: none;
+}
+
+.input-section button {
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: #2e7d32;
+  color: white;
   border: none;
-  color: whitesmoke;
-  background-color: forestgreen;
-  box-shadow: 2px 2px 5px rgb(74, 182, 74);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+}
+
+.input-section button:hover {
+  background-color: #1b5e20;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.controls label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls input[type="color"],
+.controls input[type="range"] {
+  margin-top: 8px;
   cursor: pointer;
 }
-button:active{
-  box-shadow: none;
-}
-.extra{
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-around;
-  gap: 10px;
-}
-.output-box{
+
+.output-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
+}
+
+.output-section img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.output-section button {
+  padding: 10px 25px;
+  font-size: 15px;
+  background-color: #0288d1;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.output-section button:hover {
+  background-color: #01579b;
+}
+
+@media (max-width: 600px) {
+  .qr-container {
+    width: 90%;
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .input-section input {
+    width: 90%;
+  }
 }
