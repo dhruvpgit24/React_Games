@@ -8,7 +8,7 @@ function Qrgen() {
   const [bgColor, setBgColor] = useState('ffffff');
   const [qrUrl, setQrUrl] = useState('');
 
-  useEffect(() => {
+  useEffect(() => { 
     if (qrData) {
       setQrUrl(`https://api.qrserver.com/v1/create-qr-code/?data=${qrData}&size=${size}x${size}&bgcolor=${bgColor}`);
     }
